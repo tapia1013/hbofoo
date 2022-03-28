@@ -17,9 +17,9 @@ class MyDocument extends Document {
       <Html>
         <Head>
           <link rel="preconnect" href="https://fonts.googleapis.com" />
-          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
           <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet" />
-          <script src="https://kit.fontawesome.com/d42159e0f7.js" crossorigin="anonymous"></script>
+          <script src="https://kit.fontawesome.com/d42159e0f7.js"></script>
         </Head>
         <body>
           <Main />

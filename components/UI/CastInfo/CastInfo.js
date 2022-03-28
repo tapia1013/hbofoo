@@ -1,9 +1,10 @@
 
+
 const CastInfo = (props) => {
-  return (
+  return(
     <div className="cast-info">
       <div className="cast-info__group-title">
-        Cast & Crews
+        Cast & Crew
       </div>
       <div className="cast-info__list">
         <ul className="cast-info__crew">
@@ -11,7 +12,7 @@ const CastInfo = (props) => {
             James
           </li>
           <li>
-            George Lucus
+            George Lucas
           </li>
         </ul>
         <ul className="cast-info__crew">
@@ -19,40 +20,47 @@ const CastInfo = (props) => {
             Billy
           </li>
           <li>
-            George Lucus
+            George Lucas
           </li>
         </ul>
         <ul className="cast-info__crew">
           <li>
-            Vee
+            Liu Kang
           </li>
           <li>
-            Cookie
+            George Lucas
           </li>
         </ul>
         <ul className="cast-info__crew">
           <li>
-            Nye
+            Raul
           </li>
           <li>
-            Vicky
+            George Lucas
+          </li>
+        </ul>
+        <ul className="cast-info__crew">
+          <li>
+            Samantha
+          </li>
+          <li>
+            George Lucas
           </li>
         </ul>
       </div>
-
       <div className="cast-info__group-title">
-        Directors
+        Director
       </div>
       <div className="cast-info__list">
         <ul className="cast-info__crew">
           <li>
-            Vicky
+            James
           </li>
           <li>
-            Jay
+            George Lucas
           </li>
         </ul>
-
+        
       </div>
     </div>
   )

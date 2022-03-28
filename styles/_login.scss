@@ -1,21 +1,19 @@
-.login-user {
+.login-user{
   background: rgb(26,39,103);
-  background: linear-gradient(312deg, rgba(36,39,103,1) 0%, rgba(48,20,94,1) 45%, rgba(0,0,0,1) 100%);
+  background: linear-gradient(312deg, rgba(26,39,103,1) 0%, rgba(48,20,94,1) 45%, rgba(0,0,0,1) 100%);
   height: 100vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
-  
-  &__top {
+  &__top{
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     margin-top: 2rem;
   }
-  
-  &__logo {
+  &__logo{
     background-size: 100% 100%;
     height: 22px;
     width: 129px;
@@ -23,32 +21,27 @@
     transform: scale(.9);
     margin-bottom: 1rem;
   }
-  
-  &__title {
+  &__title{
     color: white;
     font-size: 2rem;
     font-weight: 300;
   }
-  
-  &__form {
+  &__form{
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
   }
-  
-  &__user-box {
+  &__user-box{
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     cursor: pointer;
-    
-    &:nth-child(1) {
+    &:nth-child(1){
       margin-right: 3rem;
     }
   }
-
-  &__user-img {
+  &__user-img{
     width: 125px;
     height: 125px;
     border-radius: 50%;
@@ -57,17 +50,14 @@
     object-fit: cover;
     object-position: center;
   }
-  
-  &__user-name {
+  &__user-name{
     color: white;
   }
-  
-  &__buttons {
+  &__buttons{
     margin-bottom: 2rem;
   }
-  
-  &__adult, &__kid {
-    background: rgba(255,255,255,0.2);
+  &__adult, &__kid{
+    background: rgba(255,255,255, .2);
     border: none;
     border-radius: 20px;
     height: 35px;
@@ -79,18 +69,14 @@
     cursor: pointer;
     transition: opacity .3s ease-in-out;
   }
-  
-  &__adult {
+  &__adult{
     opacity: .4;
     margin-right: 1rem;
-    
-    &:hover {
+    &:hover{
       opacity: 1;
     }
   }
-  
-  &__kid {
-    opacity:1;
+  &__kid{
+    opacity: 1;
   }
 }
-

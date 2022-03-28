@@ -1,3 +1,6 @@
+import Head from 'next/head'
+import Image from 'next/image'
+
 
 export default function Home() {
   return (
@@ -6,20 +9,16 @@ export default function Home() {
         <div className="login-user__top">
           <div className="login-user__logo" />
           <span className="login-user__title">
-            Who is watching?
+            Who Is Watching?
           </span>
         </div>
 
         <div className="login-user__form">
           <div className="login-user__user-box">
-            <img
-              className="login-user__user-img"
-              src="https://pbs.twimg.com/profile_images/378800000519722378/c0fd8906bcfeac191dac58c00e6dcda8.jpeg"
-            />
+            <img className="login-user__user-img" src="https://www.dogbreedslist.info/uploads/dog-pictures/maltese-1.jpg" />
             <div className="login-user__user-name">Cookie</div>
           </div>
         </div>
-
         <div className="login-user__buttons">
           <button className="login-user__adult">Add Adult</button>
           <button className="login-user__kid">Add Kid</button>

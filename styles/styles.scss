@@ -1,7 +1,8 @@
 @use 'reset.scss';
 @use 'login.scss';
 @use 'create-user.scss';
-
+@use '../components/UI//Header/header.scss';
+@use '../components/UI/SideNav/side-nav.scss';
 
 h1 {
   font-size: 3rem;

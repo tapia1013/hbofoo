@@ -1,10 +1,23 @@
-@use 'reset.scss';
-@use 'login.scss';
-@use 'create-user.scss';
-@use '../components/UI//Header/header.scss';
-@use '../components/UI/SideNav/side-nav.scss';
-@use '../components/UI/FeaturedMedia/FeaturedMedia.scss';
+@use 'reset';
+@use 'login';
+@use 'create-user';
+@use '../components/UI/Header/header';
+@use '../components/UI/SideNav/side-nav';
+@use '../components//UI//FeaturedMedia/FeaturedMedia.scss';
+@use '../components/UI/ForYouList/ForYouList';
+@use '../components/UI/JustAdded/JustAdded';
+@use '../components/UI/PosterView/PosterView';
+@use '../components/UI/CastInfo/CastInfo';
+@use '../components/UI/Account/Account';
+@use '../components//UI/SearchModal/SearchModal';
+
 
 h1 {
-  font-size: 3rem;
+font-size: 3rem;
 }
+
+html, body {
+  background: black;
+}
+
+

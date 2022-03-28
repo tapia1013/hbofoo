@@ -1,10 +1,10 @@
 .top-header {
-  background: rgba(0,0,0,0.35);
-  color: #fff;
+  background: rgba(0,0,0,0);
+  color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.938rem 3.125rem;
+  padding: 15px 50px;
   position: fixed;
   top: 0;
   left: 0;
@@ -26,7 +26,6 @@
   
   &__left-side {
     display: flex;
-    
     div:nth-child(1) {
       margin-right: 40px;
     }
@@ -39,12 +38,26 @@
   }
   
   &__user-img {
-    width: 32px;
-    height: 32px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
-    border: 3px solid rgb(134,0,255);
+    border: 3px solid rgb(132, 0, 255);
     object-fit: cover;
     object-position: center;
     margin-right: 1rem;
   }
+  
 }
+
+
+
+
+
+
+
+
+
+
+
+
+

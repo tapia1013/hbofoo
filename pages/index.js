@@ -1,29 +1,26 @@
 import Head from 'next/head'
 import Image from 'next/image'
-
+import { useEffect } from 'react';
+import { useStateContext } from '../components/HBOProvider'
+import Login from '../components/UI/LogIn/Login'
+import { useRouter } from 'next/router';
 
 export default function Home() {
+  const globalState = useStateContext()
+  // console.log(globalState);
+
+  const Router = useRouter()
+
+  useEffect(() => {
+    const loggedIn = false;
+    if (loggedIn === false) {
+      Router.push('/create')
+    }
+  }, [])
+
   return (
     <div>
-      <div className="login-user">
-        <div className="login-user__top">
-          <div className="login-user__logo" />
-          <span className="login-user__title">
-            Who Is Watching?
-          </span>
-        </div>
-
-        <div className="login-user__form">
-          <div className="login-user__user-box">
-            <img className="login-user__user-img" src="https://www.dogbreedslist.info/uploads/dog-pictures/maltese-1.jpg" />
-            <div className="login-user__user-name">Cookie</div>
-          </div>
-        </div>
-        <div className="login-user__buttons">
-          <button className="login-user__adult">Add Adult</button>
-          <button className="login-user__kid">Add Kid</button>
-        </div>
-      </div>
+      <Login />
     </div>
   )
 }

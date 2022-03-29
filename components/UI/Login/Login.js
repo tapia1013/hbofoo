@@ -27,6 +27,7 @@ const Login = () => {
   // console.log('declared users', users);
 
   const selectUser = (id) => {
+    console.log(id);
     ls('activeUID', id)
     router.push('/')
   }
@@ -34,7 +35,7 @@ const Login = () => {
   const showUsers = () => {
     if (!loadingUsers) {
       return users.map((user) => (
-        <div onClick={selectUser} className="login-user__user-box" key={user.id}>
+        <div onClick={() => selectUser(user.id)} className="login-user__user-box" key={user.id}>
           <img className="login-user__user-img" src="https://www.dogbreedslist.info/uploads/dog-pictures/maltese-1.jpg" />
           <div className="login-user__user-name">{user.user}</div>
         </div>

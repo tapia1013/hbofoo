@@ -13,7 +13,7 @@ export function HBOProvider({ children }) {
 
   const createUserAction = (e) => {
     setUser(e.target.value)
-    console.log(user);
+    // console.log(user);
   };
 
   const [sideNavOpen, setSideNavOpenAction] = useState(false);

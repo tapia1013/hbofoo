@@ -12,15 +12,15 @@ export default function Home() {
   const Router = useRouter()
 
   useEffect(() => {
-    const loggedIn = false;
-    if (loggedIn === false) {
-      Router.push('/create')
-    }
+    // const loggedIn = false;
+    // if (loggedIn === false) {
+    //   Router.push('/create')
+    // }
   }, [])
 
   return (
     <div>
-      <Login />
+      SHOW HOME PAGE
     </div>
   )
 }

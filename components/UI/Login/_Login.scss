@@ -37,9 +37,7 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    &:nth-child(1){
-      margin-right: 3rem;
-    }
+    margin-right: 3rem;
   }
   &__user-img{
     width: 125px;

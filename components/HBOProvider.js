@@ -7,18 +7,29 @@ export function useStateContext() {
 }
 
 export function HBOProvider({ children }) {
-  const [user, setUser] = useState('')
-  const defaultUserImg = 'https://www.dogbreedslist.info/uploads/dog-pictures/maltese-1.jpg'
+  const [user, setUser] = useState('');
+
+  const defaultUserImg = 'https://www.dogbreedslist.info/uploads/dog-pictures/maltese-1.jpg';
+
   const createUserAction = (e) => {
     setUser(e.target.value)
     console.log(user);
-  }
+  };
+
+  const [sideNavOpen, setSideNavOpenAction] = useState(false);
+  const [accountModalOpen, setAccountModalOpenAction] = useState(false);
+
+
 
   return (
     <StateContext.Provider value={{
       user,
       createUserAction,
-      defaultUserImg
+      defaultUserImg,
+      sideNavOpen,
+      setSideNavOpenAction,
+      accountModalOpen,
+      setAccountModalOpenAction
     }}>
       {children}
     </StateContext.Provider>

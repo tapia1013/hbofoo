@@ -1,6 +1,10 @@
-
+// check state if data has been loaded to activate skeleton
+import { useEffect, useState } from 'react'
 
 const MediaRow = (props) => {
+  const [loadingData, setLoadingData] = useState(true)
+
+
   const loopComp = (comp, digit) => {
     let thumbnails = [];
     for (let index = 1; index <= digit; index++) {
@@ -9,23 +13,53 @@ const MediaRow = (props) => {
 
     return thumbnails;
   }
+
+  // for showing thumbnails logic... SIMULATE LOADING
+  const showThumbnails = () => {
+    setTimeout(() => setLoadingData(false), 5000);
+
+    return loadingData
+      ? loopComp((<Skeleton />), 10)
+      : loopComp((<Thumbnail />), 10)
+  }
+
   return (
-    <div className="just-added">
-      <h3 className="just-added__title">Just Added</h3>
-      <div className="just-added__thumbnails">
+    <div className={`media-row ${props.type}`}>
+      <h3 className="media-row__title">{props.title}</h3>
+      <div className="media-row__thumbnails">
 
-        {loopComp(
-          (<div className="just-added__thumbnail">
-            <img src="https://cdn11.bigcommerce.com/s-ydriczk/images/stencil/1280x1280/products/88997/93196/Avengers-Endgame-Final-Style-Poster-buy-original-movie-posters-at-starstills__42370.1563973516.jpg?c=2?imbypass=on" />
-            <div className="just-added__top-layer">
-              <i className="fas fa-play" />
-            </div>
-          </div>), 10
+        {showThumbnails()}
 
-        )}
+        {/* {loopComp(
+          (<Thumbnail />), 10
+
+        )} */}
       </div>
     </div>
   )
 }
+
+
+const Thumbnail = () => {
+  return (
+    <div className="media-row__thumbnail">
+      <img src="https://cdn11.bigcommerce.com/s-ydriczk/images/stencil/1280x1280/products/88997/93196/Avengers-Endgame-Final-Style-Poster-buy-original-movie-posters-at-starstills__42370.1563973516.jpg?c=2?imbypass=on" />
+      <div className="media-row__top-layer">
+        <i className="fas fa-play" />
+      </div>
+    </div>
+  )
+}
+
+
+
+const Skeleton = () => {
+  return (
+    <div className="media-row__thumbnail-skeleton">
+      <div className="media-row__thumbnail-skeleton-img"></div>
+    </div>
+  )
+}
+
 
 export default MediaRow;

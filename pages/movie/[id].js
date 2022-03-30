@@ -30,7 +30,7 @@ export default function SingleMediaPage(props) {
       .catch((error) => {
         console.log(error)
       })
-  }, [])
+  }, [mediaData])
 
   return AuthCheck(
     <MainLayout>
@@ -53,7 +53,7 @@ export default function SingleMediaPage(props) {
           endpoint={`movie/${props.query.id}/similar?`}
         />
       </LazyLoad>
-      <CastInfo />
+      <CastInfo mediaID={props.query.id} />
     </MainLayout>
   )
 }

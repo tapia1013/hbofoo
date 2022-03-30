@@ -4,7 +4,6 @@ import axios from 'axios';
 import { shuffleArray } from '../../utilities';
 import Link from 'next/link';
 
-
 const MediaRow = (props) => {
   const [loadingData, setLoadingData] = useState(true);
   const [movies, setMoviesData] = useState([])

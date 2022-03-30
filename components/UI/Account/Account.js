@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { useStateContext } from "../../HBOProvider";
 
 
@@ -5,14 +6,15 @@ import { useStateContext } from "../../HBOProvider";
 const Account = (props) => {
   const globalState = useStateContext()
 
-  const loopComp = (comp, digit) => {
-    let thumbnails = [];
-    for (let index = 1; index <= digit; index++) {
-      thumbnails.push(comp)
+  useEffect(() => {
+    if (globalState.accountModalOpen) {
+      document.body.style.overflowY = 'hidden'
+    } else {
+      document.body.style.overflowY = 'auto'
     }
+  }, [globalState.accountModalOpen])
 
-    return thumbnails;
-  }
+
   return (
     <div className={`account ${globalState.accountModalOpen ? 'account--active' : ''}`}>
       <div className="account__details">
@@ -30,7 +32,7 @@ const Account = (props) => {
                 </div>
               </div>
             </div>
-          </div>)
+          </div>
         </div>
       </div>
       <div className="account__menu">

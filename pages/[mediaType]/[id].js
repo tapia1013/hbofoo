@@ -16,22 +16,6 @@ export default function SingleMediaPage(props) {
   const router = useRouter();
   const [mediaData, setMediaData] = useState(false)
 
-  // for getting params in url
-  // const { id } = router.query
-
-  // console.log(props);
-
-  // useEffect(() => {
-  //   axios
-  //     .get(`https://api.themoviedb.org/3/movie/${props.query.id}?api_key=c1b0e735ad3ff470f44fa29c9a1e6189`)
-  //     .then((response) => {
-  //       console.log(response);
-  //       setMediaData(response.data)
-  //     })
-  //     .catch((error) => {
-  //       console.log(error)
-  //     })
-  // }, [mediaData])
 
   return AuthCheck(
     <MainLayout>
@@ -49,13 +33,14 @@ export default function SingleMediaPage(props) {
         }
       >
         <MediaRow
+          updateData={props.query.id}
           title="Similar To This"
           type='small-v'
           mediaType={props.query.mediaType}
           endpoint={`${props.query.mediaType === 'movie' ? 'movie' : 'tv'}/${props.query.id}/similar?`}
         />
       </LazyLoad>
-      <CastInfo mediaID={props.query.id} mediaType={props.query.mediaType} />
+      <CastInfo mediaID={props.query.id} mediaType={props.query.mediaType} updateData={props.query.id} />
     </MainLayout>
   )
 }

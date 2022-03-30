@@ -10,10 +10,12 @@ import AuthCheck from '../../components/AuthCheck';
 import LazyLoad from 'react-lazyload';
 import Placeholder from '../../components/UI/Placeholder/Placeholder';
 import GenreNav from '../../components/UI/GenreNav/GenreNav';
+import axios from 'axios';
+import { shuffleArray } from '../../components/utilities';
 
 
 
-export default function Home() {
+export default function MediaTypePage(props) {
   const globalState = useStateContext()
   // console.log(globalState);
 
@@ -29,7 +31,7 @@ export default function Home() {
         linkUrl='/movie/460465'
         type='front'
       /> */}
-      <GenreNav />
+      <GenreNav mediaType={props.query.mediaType} genresData={props.genresData} />
       <LazyLoad
         offset={-400}
         placeholder={
@@ -45,4 +47,29 @@ export default function Home() {
 
     </MainLayout>
   )
+}
+
+
+// GETS SOME TYPE OF DATA BEFORE THE PAGE LOADS THEN WE CAN PASS IN THAT DATA TO THE PROPS OF THIS PAGE
+export async function getServerSideProps(context) {
+  let genresData;
+  let featuredData;
+
+  try {
+    genresData = await axios.get(`https://api.themoviedb.org/3/genre/${context.query.mediaType}/list?api_key=c1b0e735ad3ff470f44fa29c9a1e6189`);
+
+    featuredData = await axios.get(`https://api.themoviedb.org/3/discover/${context.query.mediaType}?primary_release_year=2022&api_key=c1b0e735ad3ff470f44fa29c9a1e6189`)
+
+
+  } catch (error) {
+    console.log(error);
+  }
+
+  return {
+    props: {
+      genresData: genresData.data.genres,
+      featuredData: shuffleArray(featuredData.data.results)[0],
+      query: context.query
+    }
+  }
 }

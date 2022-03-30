@@ -18,7 +18,7 @@ const Account = (props) => {
       <div className="account__details">
         <div className="account__title">My List</div>
         <div className="account__watch-list">
-          {loopComp((<div className="account__watch-video">
+          <div className="account__watch-video">
             <img src="https://www.dogbreedslist.info/uploads/dog-pictures/maltese-1.jpg" />
             <div className="account__watch-overlay">
               <div className="account__watch-buttons">
@@ -30,8 +30,7 @@ const Account = (props) => {
                 </div>
               </div>
             </div>
-          </div>), 6)}
-
+          </div>)
         </div>
       </div>
       <div className="account__menu">

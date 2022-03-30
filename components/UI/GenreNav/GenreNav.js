@@ -12,95 +12,29 @@ const GenreNav = (props) => {
 
 	return (
 		<ul className={`genre-nav ${activeNav ? 'genre-nav--active' : ''}`}>
-			<li>
-				<Link href="/">
-					<a>
-						Home
-					</a>
-				</Link>
-			</li>
-
-			<li>
-				<Link href="/">
-					<a>
-						Home
-					</a>
-				</Link>
-			</li>
-
-			<li>
-				<Link href="/">
-					<a>
-						Home
-					</a>
-				</Link>
-			</li>
-
-			<li>
-				<Link href="/">
-					<a>
-						Home
-					</a>
-				</Link>
-			</li>
-
-			<li>
-				<Link href="/">
-					<a>
-						Home
-					</a>
-				</Link>
-			</li>
-
-			<li>
-				<Link href="/">
-					<a>
-						Home
-					</a>
-				</Link>
-			</li>
-
-			<li>
-				<Link href="/">
-					<a>
-						Home
-					</a>
-				</Link>
-			</li>
-
-			<li>
-				<Link href="/">
-					<a>
-						Home
-					</a>
-				</Link>
-			</li>
-
-			<li>
-				<Link href="/">
-					<a>
-						Home
-					</a>
-				</Link>
-			</li>
-
-			<li>
-				<Link href="/">
-					<a>
-						Home
-					</a>
-				</Link>
-			</li>
-
-			<li>
-				<Link href="/">
-					<a>
-						Home
-					</a>
-				</Link>
-			</li>
+			<GenreList genresData={props.genresData} mediaType={props.mediaType} />
 		</ul>
 	);
 };
+
+
+
+// loop through genres tags component
+const GenreList = (props) => {
+	return props.genresData.map((item) => {
+		return (
+			<li key={item.id}>
+				<Link href="/">
+					<a>
+						{item.name}
+					</a>
+				</Link>
+			</li>
+		)
+	})
+}
+
+
+
 
 export default GenreNav;

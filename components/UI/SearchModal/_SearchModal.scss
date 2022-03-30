@@ -10,6 +10,7 @@
   visibility: hidden;
   transition: opacity .4s ease-in-out;
   z-index: 13;
+  overflow: auto;
   
   &--active{
     visibility: visible;
@@ -22,6 +23,7 @@
     margin-bottom: 3rem;
   }
   &__input{
+    color: #fff;
     background: transparent;
     font-size: 4rem;
     border: none;

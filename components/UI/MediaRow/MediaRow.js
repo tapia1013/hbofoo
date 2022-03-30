@@ -22,7 +22,7 @@ const MediaRow = (props) => {
         console.log('Error Response For ' + props.title);
         console.log(error)
       })
-  }, [])
+  }, []);
 
   const loopComp = (comp, digit) => {
     let thumbnails = [];

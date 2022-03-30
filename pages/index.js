@@ -27,7 +27,12 @@ export default function Home() {
 
   return AuthCheck(
     <MainLayout>
-      <FeaturedMedia />
+      <FeaturedMedia
+        videoUrl="https://www.youtube.com/embed/NYH2sLid0Zc?autoplay=1&loop=1&start=16"
+        title='Mortal Kombat'
+        location='In theaters and on HBO MAX. Streaming throughout May 23.'
+        mediaUrl='/movies/id'
+      />
       <LazyLoad
         offset={-400}
         placeholder={

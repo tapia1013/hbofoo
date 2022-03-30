@@ -18,12 +18,6 @@ export default function Home() {
 
   const Router = useRouter()
 
-  // useEffect(() => {
-  //   // const loggedIn = false;
-  //   // if (loggedIn === false) {
-  //   //   Router.push('/create')
-  //   // }
-  // }, [])
 
   return AuthCheck(
     <MainLayout>

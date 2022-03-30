@@ -7,6 +7,9 @@ import FeaturedMedia from "../../components/UI/FeaturedMedia/FeaturedMedia";
 import AuthCheck from '../../components/AuthCheck';
 import { useRouter } from 'next/router';
 import axios from 'axios';
+import Placeholder from '../../components/UI/Placeholder/Placeholder';
+import LazyLoad from 'react-lazyload';
+
 
 
 export default function SingleMediaPage(props) {
@@ -38,7 +41,18 @@ export default function SingleMediaPage(props) {
         linkUrl='/movies/id'
         type='single'
       />
-      {/* <MediaRow title='More Like This' type='large-v' /> */}
+      <LazyLoad
+        offset={-400}
+        placeholder={
+          <Placeholder type='small-v' title="Movies" />
+        }
+      >
+        <MediaRow
+          title="Similar To This"
+          type='small-v'
+          endpoint={`movie/${props.query.id}/similar?`}
+        />
+      </LazyLoad>
       <CastInfo />
     </MainLayout>
   )

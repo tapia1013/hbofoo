@@ -18,20 +18,21 @@ export default function Home() {
 
   const Router = useRouter()
 
-  useEffect(() => {
-    // const loggedIn = false;
-    // if (loggedIn === false) {
-    //   Router.push('/create')
-    // }
-  }, [])
+  // useEffect(() => {
+  //   // const loggedIn = false;
+  //   // if (loggedIn === false) {
+  //   //   Router.push('/create')
+  //   // }
+  // }, [])
 
   return AuthCheck(
     <MainLayout>
       <FeaturedMedia
-        videoUrl="https://www.youtube.com/embed/NYH2sLid0Zc?autoplay=1&loop=1&start=16"
+        mediaUrl="https://www.youtube.com/embed/NYH2sLid0Zc?autoplay=1&loop=1&start=16"
         title='Mortal Kombat'
         location='In theaters and on HBO MAX. Streaming throughout May 23.'
-        mediaUrl='/movies/id'
+        linkUrl='/movies/id'
+        type='front'
       />
       <LazyLoad
         offset={-400}

@@ -22,6 +22,31 @@ export default function MediaTypePage(props) {
   const Router = useRouter()
 
 
+  const showRandomMedia = () => {
+    let thumbType;
+
+    return props.genresData.map((item) => {
+      thumbType = shuffleArray(globalState.thumbTypes)[0]
+
+      return (
+        <LazyLoad
+          offset={-200}
+          placeholder={
+            <Placeholder title={item.name} type={thumbType} />
+          }
+          key={item.id}
+        >
+          <MediaRow
+            title={item.name}
+            type={thumbType}
+            endpoint={`discover/${props.query.mediaType}?with_genres=${item.id}&sort_by=popularity.desc&primary_release_year=2022`}
+          />
+        </LazyLoad>
+      )
+    })
+  }
+
+
   return AuthCheck(
     <MainLayout>
       <FeaturedMedia
@@ -31,19 +56,7 @@ export default function MediaTypePage(props) {
         type='single'
       />
       <GenreNav mediaType={props.query.mediaType} genresData={props.genresData} />
-      <LazyLoad
-        offset={-400}
-        placeholder={
-          <Placeholder type='large-v' title="Movies" />
-        }
-      >
-        <MediaRow
-          title="Movies"
-          type='large-v'
-          endpoint='discover/movie?sort_by=popularity.desc&primary_release_year=2022'
-        />
-      </LazyLoad>
-
+      {showRandomMedia()}
     </MainLayout>
   )
 }

@@ -8,6 +8,7 @@ import FeaturedMedia from '../components/UI/FeaturedMedia/FeaturedMedia';
 import MediaRow from '../components/UI/MediaRow/MediaRow'
 import AuthCheck from '../components/AuthCheck';
 import LazyLoad from 'react-lazyload';
+import Placeholder from '../components/UI/Placeholder/Placeholder';
 
 
 
@@ -27,42 +28,72 @@ export default function Home() {
   return AuthCheck(
     <MainLayout>
       <FeaturedMedia />
-      <LazyLoad height={680} offset={-200} placeholder={<h1>Loading</h1>}>
+      <LazyLoad
+        offset={-400}
+        placeholder={
+          <Placeholder type='large-v' title="Movies" />
+        }
+      >
         <MediaRow
           title="Movies"
           type='large-v'
           endpoint='discover/movie?sort_by=popularity.desc&primary_release_year=2022'
         />
       </LazyLoad>
-      <LazyLoad height={333} offset={-200}>
+      <LazyLoad
+        offset={-400}
+        placeholder={
+          <Placeholder type='small-h' title="Series" />
+        }
+      >
         <MediaRow
           title="Series"
           type='small-h'
           endpoint='discover/tv?primary_release_year=2022'
         />
       </LazyLoad>
-      <LazyLoad height={440} offset={-200}>
+      <LazyLoad
+        offset={-400}
+        placeholder={
+          <Placeholder type='small-v' title="Action" />
+        }
+      >
         <MediaRow
           title="Action"
           type='small-v'
           endpoint='discover/movie?with_genres=28&primary_release_year=2022'
         />
       </LazyLoad>
-      <LazyLoad height={200}>
+      <LazyLoad
+        offset={-400}
+        placeholder={
+          <Placeholder type='large-h' title="Horror" />
+        }
+      >
         <MediaRow
           title="Horror"
           type='large-h'
           endpoint='discover/movie?with_genres=27&primary_release_year=2022'
         />
       </LazyLoad>
-      <LazyLoad height={200}>
+      <LazyLoad
+        offset={-400}
+        placeholder={
+          <Placeholder type='large-h' title="Animations" />
+        }
+      >
         <MediaRow
           title="Animations"
           type='large-h'
           endpoint='discover/movie?with_genres=16&primary_release_year=2022'
         />
       </LazyLoad>
-      <LazyLoad height={200}>
+      <LazyLoad
+        offset={-400}
+        placeholder={
+          <Placeholder type='small-v' title="Sci-fi" />
+        }
+      >
         <MediaRow
           title="Sci-fi"
           type='small-v'

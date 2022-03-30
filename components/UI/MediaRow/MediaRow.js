@@ -17,8 +17,6 @@ const MediaRow = (props) => {
 
         setLoadingData(false);
 
-        // console.log('Successful Response For ' + props.title);
-        // console.log(response);
       })
       .catch((error) => {
         console.log('Error Response For ' + props.title);
@@ -35,28 +33,23 @@ const MediaRow = (props) => {
     return thumbnails;
   }
 
-  // for showing thumbnails logic... SIMULATE LOADING
-  const showThumbnails = () => {
-    // setTimeout(() => setLoadingData(false), 5000);
 
+  // for showing thumbnails logic... SIMULATE LOADING
+  const showThumbnails = (type) => {
     return loadingData
       ? (loopComp((<Skeleton />), 10))
       : (movies.map((movie) => {
-        return <Thumbnail movieData={movie} />
+        return <Thumbnail movieData={movie} type={type} />
       }))
   }
+
+
 
   return (
     <div className={`media-row ${props.type}`}>
       <h3 className="media-row__title">{props.title}</h3>
       <div className="media-row__thumbnails">
-
-        {showThumbnails()}
-
-        {/* {loopComp(
-          (<Thumbnail />), 10
-
-        )} */}
+        {showThumbnails(props.type)}
       </div>
     </div>
   )
@@ -64,10 +57,27 @@ const MediaRow = (props) => {
 
 
 const Thumbnail = (props) => {
-  console.log(props.movieData);
+  const thumbSize = (type) => {
+    if (type === 'large-v') {
+      return '400'
+    }
+
+    if (type === 'small-v') {
+      return '185'
+    }
+
+    if (type === 'large-h') {
+      return '500'
+    }
+
+    if (type === 'small-h') {
+      return '342'
+    }
+  }
+
   return (
     <div className="media-row__thumbnail">
-      <img src={`https://image.tmdb.org/t/p/original${props.movieData.poster_path}`} />
+      <img src={`https://image.tmdb.org/t/p/w${thumbSize(props.type)}/${props.movieData.poster_path}`} />
       <div className="media-row__top-layer">
         <i className="fas fa-play" />
       </div>

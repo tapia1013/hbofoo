@@ -48,6 +48,7 @@ export default function Home() {
       >
         <MediaRow
           title="Series"
+          mediaType="series"
           type='small-h'
           endpoint='discover/tv?primary_release_year=2022'
         />

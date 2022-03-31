@@ -25,7 +25,7 @@ const Header = (props) => {
       </Link>
       <div className="top-header__account" onClick={() => globalState.setAccountModalOpenAction(!globalState.accountModalOpen)}>
         <img src="https://www.dogbreedslist.info/uploads/dog-pictures/maltese-1.jpg" className="top-header__user-img" />
-        <div className="top-header__user-name">Bryant</div>
+        <div className="top-header__user-name">{globalState.user}</div>
       </div>
       <Account />
       <SearchModal />

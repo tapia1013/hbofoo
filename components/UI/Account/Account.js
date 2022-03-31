@@ -76,10 +76,10 @@ const Account = (props) => {
         </ul>
         <div className="side-nav__divider" />
         <ul className="account__main">
-          <li onClick={signOut}>
+          <li style={{ cursor: 'pointer' }} onClick={signOut}>
             <a>Account</a>
           </li>
-          <li onClick={signOut}>
+          <li style={{ cursor: 'pointer' }} onClick={signOut}>
             <a>Sign Out</a>
           </li>
         </ul>
